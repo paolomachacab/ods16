@@ -1,0 +1,13 @@
+ods16_data <- read_excel("C:/Users/Paolo/Desktop/dsds/ods16_data.xlsx")
+View(ods16_data)
+install.packages("classInt")
+install.packages("readxl")
+install.packages("dplyr")
+install.packages("readxl")
+library(classInt)
+library(readxl)
+library(dplyr)
+ponderado <- ods16_data$Suma_Ponderado
+library(classInt)
+quiebres <- classIntervals(ponderado, n = 4, style = "jenks")
+print(quiebres$brks)
